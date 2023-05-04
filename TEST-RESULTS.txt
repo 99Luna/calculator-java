@@ -1,0 +1,39 @@
+jedinicni test za kod calculate je:
+
+import org.junit.Test;
+import static org.junit.Assert;
+
+public class CalculatorTest {
+
+   
+    public void testBasicAddition() {
+        String izraz = "5-2";
+        String ocekivani = "3.0";
+        String stvrano = Calculator.Run(izraz);
+        assertEquals(ocekivano, stvarno);
+    }
+
+
+Softverske greske ,nedostaci i propusti su sledeci :
+
+1)Metodu ToString treba preimenovati u toString kako bi pratila konvencije za Java nazive metoda.
+2)Metoda Calculate ne obradjuje slucaj u kojem ulazni izraz ima zagrade zato sto ne prepoznaje zagrade.
+
+Sistemsko testiranje po metodi crne kutije:
+
+Kako bi smo tetsirali ovaj kod Calculate uradicemo sledece:
+*Testiranje osnovnih aritmetickih operacija sa celim brojevima:
+Ulaz:2+2 izlaz:4
+Ulaz:4-2 izlaz:2
+*Sa negativnim celim brojevima:
+Ulaz:-2+4 izlaz:2
+Ulaz:4-9 izalz:-5
+*Sa decimalnim brojevima:
+Ulaz:2.10+5.5 izlaz:7.6
+Ulaz:4.5-1.1 izlaz:3.4
+*Deljenje sa nulom:
+Ulaz:6/0 izlaz:Infitity
+Ulaz:-6/0 izlaz:Infitity
+*Testiranje sa nevazecim karakterima:
+Ulaz:9+x izlaz:ERROR 
+Ulaz:5^7 izlaz:ERROR
